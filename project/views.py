@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def project(request):
     context = {}
     return render(request, 'main.html', context)
+
+def contact(request):
+    context = {}
+    return render(request, 'contact.html', context)
