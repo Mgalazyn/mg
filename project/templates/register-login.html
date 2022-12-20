@@ -1,6 +1,7 @@
 {% include 'nav_bar.html' %}
 {% block content %}
 
+<html lan
 <form action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Username:" />
