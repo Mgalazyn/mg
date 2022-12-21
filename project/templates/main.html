@@ -29,11 +29,37 @@
         <img src='{% static 'images/my_photo.jpg' %}' class="background_image2">
      </div>
     <center><h1> Project - MG v2.0 </h1></center>
-    <ul>
-        <li> &#9995; Cześć, nazywam sie Marcin Gałażyn</li>
-        <li> &#8986; Mam 24 lata</li>
-        <li> &#128102; Cała moją historie masz <a class='cta' href="{% url 'history' %}"> tutaj .</a></li>
-    </ul> 
+    <div class="container">
+        <ul class="mainUL">
+            <li> &#9995; Cześć, nazywam sie Marcin Gałażyn</li>
+            <li> &#8986; Mam 24 lata</li>
+            <li> &#128102; Cała moją historie masz <a class='cta' href="{% url 'history' %}"> tutaj .</a></li>
+            <li> &#128187; Aktualnie staram sie zbudować swoja karierę w IT (Aktualnie QA Enginner) </li>
+            <li> &#127976; Mieszkam w Warszawie </li>
+            <li> &#127968; Natomiast pochodzę z Suwalszczyzny</li>
+            <li> &#128194; Z innych ciekawostek: 
+                <ul class="nestedUL">
+                    <li> Jak nie koduje to trenuje trojboj </li>
+                    <li> Podnosze 270kg w martwym ciągu </li>
+                    <li> Odwiedzilem 11 krajow, z czego moim ulubiony jest:<a class='cta' href="{% url 'iceland' %}"> Islandia </a></li> 
+                </ul>
+            </li>
+        </ul> 
+    </div>
+    <center><h2> SOCIAL MEDIA </h2><center>
+        <ul class="socialUL">
+            <li><a href="https://github.com/Mgalazyn"> Github</a></li>
+            <li><a href="https://mgalazyn.herokuapp.com/">Projects page</a></li>
+            <li><a href="https://www.linkedin.com/in/marcin-ga%C5%82a%C5%BCyn-52bb911a8/"> Linkedin</a></li>
+            <li><a href="https://www.instagram.com/marcingalazynn/"> Instagram </a></li>
+        </ul>
+    <center><h3> ZASADY </h3></center>
+    <ul class="rulesUL">
+        <li> Done is better than perfect ~ someone, someday </li>
+        <li> Procastination is like a credit card: it's fun until you get the bill </li>
+        <li> Discipline beats motivation </li> 
+    </ul>
+    
     {% endblock content %}
 </body>
 </html>

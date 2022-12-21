@@ -49,3 +49,8 @@ def logoutuser(request):
     logout(request)
     messages.error(request, 'User logout ')
     return redirect('login')
+
+
+def iceland(request):
+    context = {}
+    return render(request, 'iceland.html', context)

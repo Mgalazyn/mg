@@ -87,12 +87,55 @@ h1 {
     font-family: "Press Start 2P";
 }
 
-ul {
+ul.mainUL {
     position: absolute;
     top: 475px;
     left: 750px;
     font-size: large;
     list-style-type: disc;
-    padding: 0 0 4px 23px;
+    padding: 15px 10px 4px 23px;
+} 
+
+li {
+    padding: 10px 0 0 0;
+}
+
+ul.mainUL, ul.nestedUL, ul.socialUL {
+    padding-left: 2em;
+}
+
+h2 {
+    position: absolute;
+    top: 875px;
+    left: 775px;
+    font-weight: 700;
+    font-family: "Press Start 2P";
+}
+
+ul.socialUL {
+    position: absolute;
+    top: 900px;
+    left: 800px;
+    font-size: large;
+    list-style-type: disc;
+    padding: 15px 10px 4px 23px;
+}
+
+h3 {
+    position: absolute;
+    top: 1090px;
+    left: 775px;
+    font-weight: 700;
+    font-family: "Press Start 2P";
+}
+
+ul.rulesUL {
+    position: absolute;
+    top: 1115px;
+    left: 800px;
+    font-size: large;
+    list-style-type: disc;
+    padding: 15px 10px 4px 23px;
+    padding-bottom: 250px;
 }
 

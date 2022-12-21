@@ -8,4 +8,5 @@ urlpatterns = [
     path('history/', views.history, name='history'),
     path('login/', views.loginpage, name='login'),
     path('logout/', views.logoutuser, name='logout'),
+    path('iceland/', views.iceland, name='iceland'),
 ]
