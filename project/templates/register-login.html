@@ -1,12 +1,51 @@
-{% include 'nav_bar.html' %}
-{% block content %}
+{% load static %}
 
-<html lan
-<form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="Username:" />
-    <input type="password" name="password" placeholder="Enter password: "/>
-    <input type="submit" name="Login" />
-</form>
 
-{% endblock content %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="{% static 'login-style.css' %}">
+
+</head>
+<body>
+    <div class='login-card-container'>
+        <div class="login-card">
+            <div class="loign-card-logo">
+                <img class="login-logo" src="{% static 'images/my_logo.jpg' %}"></a>
+            <div class="login-card-header">
+                <h4>Sign In</h4>
+                <div>Please login</div>
+            </div>
+            
+            <form action="{% url 'login' %}" method="POST" class="login-card-form">
+                {% csrf_token %}
+                <div class="form-item">
+                    <input type="text" name="username" placeholder="Username:" required autofocus />
+                </div>
+                <div class="form-item">
+                    <input type="password" name="password" placeholder="Enter password: "/>
+                </div>
+                
+                </div class="form-item-other">
+                    <center><div class="checkbox">
+                        <input type="checkbox" id="remembermecheckbox">
+                        <label for="remembermecheckbox">Remember me </label>
+                    </div><center>
+                        <a href="#"> Forgot password? </a>
+                        <center><button>Sign in</button><center>
+                    <div class="login-card-footer">
+                        Don't have an account? <a href="#"> Sign up</a>
+                    </div>  
+                    
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+
