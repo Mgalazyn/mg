@@ -7,18 +7,15 @@ body {
 }
 
 .login-card {
-    height: 450px;
+    height: 650px;
     background: rgb(104, 189, 189);
     padding: 4rem;
     border-radius: 10px;
     position: relative;
 }
 
-.login-card-logo {
-    margin-bottom: 2rem;
-}
 
-.login-card-logo,
+.login-card-logo, 
 .login-card-header,
 .login-card-footer {
     text-align: center;
@@ -34,7 +31,7 @@ body {
 }
 
 .login-card-header {
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
 }
 
 .login-card-header h1 {
@@ -48,29 +45,6 @@ body {
     opacity: .8;
 }
 
-.login-card-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.login-card-form .form-item {
-    position: relative;
-}
-
-.login-card-form .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.login-card-form .form-item-other {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: calc(1rem * .8);
-    margin-bottom: .5rem;
-}
 
 .login-card-footer {
     margin-top: 1.5rem;

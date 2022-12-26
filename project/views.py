@@ -3,6 +3,8 @@ from django.contrib.auth import login, authenticate, logout
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 # Create your views here.
 
 def project(request):
@@ -42,7 +44,7 @@ def loginpage(request):
             messages.error(request, 'Username or password is incorrect')
             
     context = {}
-    return render(request, 'register-login.html', context)
+    return render(request, 'login.html', context)
 
 
 def logoutuser(request):
@@ -54,3 +56,25 @@ def logoutuser(request):
 def iceland(request):
     context = {}
     return render(request, 'iceland.html', context)
+
+
+def register(request):
+    form = UserCreationForm()
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.save()
+
+            messages.success(request, 'User created successfully!')
+
+            login(request, user)
+            return redirect('main')
+
+        else:
+            messages.error(request, 'Something went wrong! ')
+
+    context = {'form': form}
+    return render(request, 'register.html', context)

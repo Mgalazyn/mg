@@ -1,0 +1,37 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="{% static 'register-style.css' %}">
+
+</head>
+{% block content %}
+<body>
+    <div class='login-card-container'>
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img class="login-logo" src="{% static 'images/my_logo.jpg' %}"></a>
+            <div class="login-card-header">
+                <h3>Please sign up</h3>
+                <div>Enter credentails for new account: </div>
+            </div>
+            
+            <form action="{% url 'register' %}" method="POST" class="login-card-form">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <center><button>Sign up</button><center>
+            <div class="login-card-footer">
+                Already have an account? <a href="{% url 'login' %}"> Sign in </a>
+            </div>  
+            </form>
+            
+        </div>
+    </div>
+</body>
+{% endblock content %}
+

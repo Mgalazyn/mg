@@ -2,7 +2,6 @@
 
 
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'login-style.css' %}">
 
 </head>
+{% block content %}
 <body>
     <div class='login-card-container'>
         <div class="login-card">
@@ -39,7 +39,7 @@
                         <a href="#"> Forgot password? </a>
                         <center><button>Sign in</button><center>
                     <div class="login-card-footer">
-                        Don't have an account? <a href="#"> Sign up</a>
+                        Don't have an account? <a href="{% url 'register' %}"> Sign up</a>
                     </div>  
                     
                 </div>
@@ -48,4 +48,5 @@
         </div>
     </div>
 </body>
+{% endblock content %}
 
