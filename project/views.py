@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CustomUserCreationForm
+from .models import Message
 # Create your views here.
 
 def project(request):
@@ -12,6 +13,7 @@ def project(request):
     return render(request, 'main.html', context)
 
 def contact(request):
+    
     context = {}
     return render(request, 'contact.html', context)
 

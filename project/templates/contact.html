@@ -1,38 +1,29 @@
-{% extends 'main.html' %}
+{% include 'nav_bar.html' %}
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact details</title>
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+
+</head>
 {% block content %}
 
-<main class="formPage my-xl">
-    <div class="content-box">
-        <div class="formWrapper">
-            <a class="backButton" href=""><i class="im im-angle-left"></i></a>
-            <br>
-
-            <form class="form" method="POST">
-                {% csrf_token %}
-                
-                <div class="form__field">
-                    <label for="formInput#text">Add your name: </label>
-                    
-                </div>
-
-                <div class="form__field">
-                    <label for="formInput#text">Type in your email: </label>
-
-                </div>
-                
-                <!-- Input:Text -->
-                <div class="form__field">
-                    <label for="formInput#text">Type in subject of message: </label>
-
-                </div>
-                <div class="form__field">
-                    <label for="formInput#text">Add text:</label>
-
-                </div>
-                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
-            </form>
-        </div>
-    </div>
-</main>
+<body>
+<div class="contact-box">
+    <form action="{% url 'contact' %}" method="POST">
+        {% csrf_token %}
+        <center><img src="{% static 'images/my_logo.jpg' %}"><center>
+        <input type="text" class="input-field" placeholder="Your email: ">
+        <input type="text" class="input-field" placeholder="Subject: ">
+        <textarea type="text" class="input-field textarea-field" placeholder="Your message:  "></textarea>
+    </form>
+    <center><button type="button" class="btn">Send message</button><center>
+</div>
+</body>
+</html>
 {% endblock %}
