@@ -18,10 +18,7 @@
     <form action="{% url 'contact' %}" method="POST">
         {% csrf_token %}
         <center><img src="{% static 'images/my_logo.jpg' %}"><center>
-        <input type="text" class="input-field" placeholder="Your email: ">
-        <input type="text" class="input-field" placeholder="Subject: ">
-        <textarea type="text" class="input-field textarea-field" placeholder="Your message:  "></textarea>
-    </form>
+            {{form.as_p}}
     <center><button type="button" class="btn">Send message</button><center>
 </div>
 </body>

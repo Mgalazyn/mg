@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, MessageForm
 from .models import Message
 # Create your views here.
 
@@ -13,8 +13,8 @@ def project(request):
     return render(request, 'main.html', context)
 
 def contact(request):
-    
-    context = {}
+    form = MessageForm()
+    context = {'form': form}
     return render(request, 'contact.html', context)
 
 def history(request):
