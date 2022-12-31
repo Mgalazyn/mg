@@ -44,6 +44,7 @@ class Profile(models.Model):
 
 
 class Message(models.Model):
+    receiver = models.EmailField(default='mgalazynn@gmail.com')
     email = models.EmailField(max_length=200, null=True, blank=True)
     subject = models.CharField(max_length=200, null=True, blank=True)
     body = models.TextField()

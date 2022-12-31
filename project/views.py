@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CustomUserCreationForm, MessageForm
 from .models import Message
+from django.core.mail import send_mail
 # Create your views here.
 
 def project(request):
@@ -13,8 +14,22 @@ def project(request):
     return render(request, 'main.html', context)
 
 def contact(request):
+    recivier = 'mgalazynn@gmail.com'
     form = MessageForm()
-    context = {'form': form}
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            message = form.save(commit=False)
+            message.recivier = recivier
+            # message_mod = [str(message.body) + 'Sender mail: ' + str(message.email)]
+            send_mail(message.subject, message.body, message.email, [recivier])
+
+        message.save()
+        messages.success(request, 'Message sent succesfully')
+        return redirect('main')
+
+
+    context = {'form': form, 'recivier':recivier}
     return render(request, 'contact.html', context)
 
 def history(request):
