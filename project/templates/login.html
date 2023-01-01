@@ -13,6 +13,9 @@
 </head>
 {% block content %}
 <body>
+    <div class='btn-back-top'>
+        <a class='btn-back' href="{% url 'main' %}"> Back </a>
+    </div>
     <div class='login-card-container'>
         <div class="login-card">
             <div class="loign-card-logo">
@@ -36,7 +39,7 @@
                         <input type="checkbox" id="remembermecheckbox">
                         <label for="remembermecheckbox">Remember me </label>
                     </div><center>
-                        <a href="#"> Forgot password? </a>
+                        <a href="{% url 'reset-password' %}"> Forgot password? </a>
                         <center><button>Sign in</button><center>
                     <div class="login-card-footer">
                         Don't have an account? <a href="{% url 'register' %}"> Sign up</a>

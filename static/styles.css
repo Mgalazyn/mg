@@ -147,3 +147,19 @@ h1.login {
     align-items: center;
     display: block;
 }
+
+i.flag-iceland:before, i.flag-is:before {
+    background-position: -36px -806px!important;
+}
+i.flag:before {
+    content: "";
+    background: url(https://mdbootstrap.com/img/svg/flags.png) no-repeat -108px -1976px;
+}
+i.flag:before, i.flag:not(.icon) {
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
