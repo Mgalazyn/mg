@@ -67,7 +67,7 @@ def loginpage(request):
 def logoutuser(request):
     logout(request)
     messages.error(request, 'User logout ')
-    return redirect('login')
+    return redirect('main')
 
 
 def iceland(request):

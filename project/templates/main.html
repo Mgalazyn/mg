@@ -8,20 +8,25 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>   
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <title>Project - MG v2.0</title>
     
 </head>
 <body>
-    {% if messages %}
+    {% comment %} {% if messages %}
     {% for message in messages %}
-    <div style="position: fixed; top: 355px; left: 50%; transform: translate(-50%, -50%); z-index: 99999"
-    class="alert  alert--{{message.tags}}">
-        <p class="alert__message">{{message}}</p>
+    <div style="position: fixed; top: 355px; left: 50%; transform: translate(-50%, -50%); z-index: 99999">
+    <div class="alert alert-success" role="alert">
+        {{message}}
+    </div>
         <button class="alert__close">x</button>
     </div> 
     {% endfor %}
-    {% endif %}
+    {% endif %} {% endcomment %}
 
     {% block content %}
      <div>
@@ -62,5 +67,16 @@
     </ul>
 
     {% endblock content %}
+
+{% block scripts %}
+    <!-- Alertify JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script>
+        {% for flashmsg in messages %}
+        alertify.set('notifier','position', 'top-center');
+        alertify.success('{{flashmsg}}');
+        {% endfor %}
+    </script>
+{% endblock %}
 </body>
 </html>
