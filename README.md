@@ -35,6 +35,7 @@ Start the server
   python manage.py runserver 
 ```
 
+Then open the browser enter: http://127.0.0.1:8000/
 
 ## Support
 
