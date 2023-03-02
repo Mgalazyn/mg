@@ -28,7 +28,25 @@ Install dependencies
 ```bash
   pip install -r requirements.txt
 ```
+Adding your personal info in settings.py
+```bash
+Create .env file in main folder
 
+#Add your django secret key in form like this
+SECRET_KEY = ""
+
+#ADD your email in form like this
+EMAIL_HOST_USER = ""
+
+#Add email password in form like this
+EMAIL_HOST_PASSWORD = ""
+
+#Add email host in form like this
+EMAIL_HOST = ""
+
+#Add email port in form like this
+EMAIL_PORT = np. 562
+```
 Start the server
 
 ```bash
