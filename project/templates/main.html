@@ -2,8 +2,10 @@
 {% load static %}
 {% include 'nav_bar.html' %}
 
+
 <html>
 <head>
+    
     <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -17,17 +19,6 @@
     
 </head>
 <body>
-    {% comment %} {% if messages %}
-    {% for message in messages %}
-    <div style="position: fixed; top: 355px; left: 50%; transform: translate(-50%, -50%); z-index: 99999">
-    <div class="alert alert-success" role="alert">
-        {{message}}
-    </div>
-        <button class="alert__close">x</button>
-    </div> 
-    {% endfor %}
-    {% endif %} {% endcomment %}
-
     {% block content %}
      <div>
         <img class="background_image" src="{% static 'images/background_image.jpg' %}" alt='background_image'>
