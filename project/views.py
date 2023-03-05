@@ -95,3 +95,8 @@ def register(request):
 
     context = {'form': form}
     return render(request, 'register.html', context)
+
+
+def powerlifting(request):
+    context = {}
+    return render(request, 'powerlifting.html', context)

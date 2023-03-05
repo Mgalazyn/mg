@@ -22,7 +22,6 @@
     {% block content %}
      <div>
         <img class="background_image" src="{% static 'images/background_image.jpg' %}" alt='background_image' />
-        <img src='{% static 'images/my_photo.jpg' %}' class="background_image2"  />
      </div>
     <center><h1> Project - MG v2.0 </h1></center>
     <div class="container">
@@ -35,7 +34,7 @@
             <li> &#127968; Natomiast pochodzę z Suwalszczyzny</li>
             <li> &#128194; Z innych ciekawostek: 
                 <ul class="nestedUL">
-                    <li> Jak nie koduje to trenuje trojboj </li>
+                    <li> Jak nie koduje to trenuje <a class='cta' href="{% url 'powerlifting' %}">trojboj </a> </li>
                     <li> Podnosze 270kg w martwym ciągu </li>
                     <li> Robie przysiad z 210kg </li>
                     <li> Wyciskam 140kg </li>
