@@ -1,3 +1,5 @@
+{%load static %}
+
 <!DOCTYPE html>
 
 <html>
@@ -7,13 +9,51 @@
         <title>Trojboj</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'powerlifting.css' %}">
     </head>
     <body>
-        
-        
+        <header>
+            <a class='cta' href="{% url 'main' %}"><button> Home</button></a>
+            <a class='cta' href="{% url 'contact' %}"><button> Contact</button></a>
+
+            {% if request.user.is_authenticated %}  
+            <a class='cta' href="{% url 'logout' %}"><button> Log out</button></a>
+            {% else %}
+            <a class='cta' href="{% url 'login' %}"><button> Login/Sign up</button></a>
+            {% endif %}
+        </header>
+        <div class="container">
+            <div class="box">
+                <video src="{%static 'images/clip6.mp4' %}" type="video/mp4" loop class="clip"></video>
+            </div>
+            <div class="box">
+                <video src="{%static 'images/clip2.mp4' %}" type="video/mp4" loop class="clip"></video>
+            </div>
+            <div class="box">
+                <video src="{%static 'images/clip3.mp4' %}" type="video/mp4" loop class="clip"></video>
+            </div>
+            <div class="box">
+                <video src="{%static 'images/clip4.mp4' %}" type="video/mp4" loop class="clip"></video>
+            </div>
+            <div class="box">
+                <video src="{%static 'images/clip5.mp4' %}" type="video/mp4" loop class="clip"></video>
+            </div>
+            <div class="box">
+                <video src="{%static 'images/clip1.mp4' %}" type="video/mp4" loop class="clip"></video>
+            </div>
+        </div>
     </body>
     <script>
-            
+        const clip = document.querySelectorAll('.clip');
+        for (let i = 0; i < clip.length; i++) {
+            clip[i].addEventListener('mouseenter', 
+            function(e) {
+                clip[i].play()
+            })
+            clip[i].addEventListener('mouseout', 
+            function(e) {
+                clip[i].pause()
+            })
+        }
     </script>
 </html>
