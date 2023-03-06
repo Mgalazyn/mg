@@ -6,57 +6,44 @@ body {
     justify-content: center;
 }
 
-.login-card {
-    height: 650px;
-    background: rgb(104, 189, 189);
-    padding: 4rem;
-    border-radius: 10px;
+.login-card-logo {
+    position: absolute;
+    top: 2%;
+    width: 50%;
+    text-align: center;
+}
+
+.login-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-card-form .form-item {
     position: relative;
 }
 
 
-.login-card-logo, 
-.login-card-header,
-.login-card-footer {
-    text-align: center;
-}
-
-.login-card a {
-    text-decoration: none;
-    color: rgb(31, 28, 224);
-}
-
-.login-card a:hover {
-    text-decoration: underline;
-}
-
-.login-card-header {
-    margin-bottom: 0rem;
-}
-
-.login-card-header h1 {
-    font-size: 50rem;
-    font-weight: 600;
+.login-card-form .form-item-other {
+    display: relative;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(1.5rem * .8);
     margin-bottom: .5rem;
-}
-
-.login-card-header h1 + div {
-    font-size: 3rem;
-    opacity: .8;
 }
 
 
 .login-card-footer {
     margin-top: 1.5rem;
-    font-size: calc(1rem * .8);
+    font-size: calc(1.5rem * .8);
 }
 
 .login-card input[type="text"],
 .login-card input[type="password"] {
     border: none;
     outline: none;
-    background: rgb(119, 207, 196);
-    padding: 1rem 1.5rem;
+    background: rgb(44, 79, 194);
+    padding: 1rem 10rem;
     padding-left: calc(1rem * 3.5);
     border-radius: 100px;
     width: 100%;
@@ -73,8 +60,10 @@ body {
     padding: 9px 25px;
     background-color: black;
     border: none;
-    cursor: pointer;  
+    cursor: pointer; 
     position: absolute; 
     top: 0; 
     left: 10px;
 }
+
+

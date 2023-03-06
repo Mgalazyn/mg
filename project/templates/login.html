@@ -16,40 +16,42 @@
     <div class='btn-back-top'>
         <a class='btn-back' href="{% url 'main' %}"> Back </a>
     </div>
-    <div class='login-card-container'>
-        <div class="login-card">
-            <div class="loign-card-logo">
-                <img class="login-logo" src="{% static 'images/my_logo.jpg' %}"></a>
-            <div class="login-card-header">
-                <h3>Sign In</h3>
-                <div>Please login</div>
-            </div>
-            
+    <div class="login-card-logo">
+        <img class="login-logo" src="{% static 'images/my_logo.jpg' %}"></a>
+    </div>
+        <div class='login-card'>
             <form action="{% url 'login' %}" method="POST" class="login-card-form">
                 {% csrf_token %}
                 <div class="form-item">
+                    <p>Username: </p>
                     <input type="text" name="username" placeholder="Username:" required autofocus />
                 </div>
                 <div class="form-item">
+                    <p>Password: </p>
                     <input type="password" name="password" placeholder="Enter password: "/>
                 </div>
-                
-                </div class="form-item-other">
-                    <center><div class="checkbox">
-                        <input type="checkbox" id="remembermecheckbox">
-                        <label for="remembermecheckbox">Remember me </label>
-                    </div><center>
-                        <a href="{% url 'reset-password' %}"> Forgot password? </a>
-                        <center><button >Sign in</button><center>
-                    <div class="login-card-footer">
-                        Don't have an account? <a href="{% url 'register' %}"> Sign up</a>
-                    </div>  
-                    
+                <div class="form-item-other">
+                    <center>
+                        <div class="checkbox">
+                            <input type="checkbox" id="remembermecheckbox">
+                            <label for="remembermecheckbox">Remember me </label>
+                        </div>
+                        <div class="forgotpassword">
+                            <a href="{% url 'reset-password' %}"> Forgot password? </a>
+                        </div>
+                    </center>
+                        
+                    <center>
+                        <div class="login-card-footer">
+                            Don't have an account? <a href="{% url 'register' %}"> Sign up</a>
+                        </div> 
+                        <button >Sign in</button>
+
+                    </center>
                 </div>
             </form>
-            
+ 
         </div>
-    </div>
 </body>
 
 
